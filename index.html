@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyCraft | Voxel Architect & Creative Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#171717',
+                            gray: '#262626',
+                            white: '#f5f5f5',
+                            orange: '#c2410c', // Dark Orange (Orange-700 equivalent)
+                            orangeLight: '#ea580c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #f5f5f5;
+        }
+        /* Hide scrollbar for gallery overlay */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .image-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 50%);
+        }
+        /* Custom cursor logic could go here, but keeping it simple for clients */
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+                <i class="fa-solid fa-cube text-brand-orange"></i>
+                <span>EASY<span class="text-brand-orange">CRAFT</span></span>
+            </a>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium text-neutral-400">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#portfolio" class="hover:text-white transition-colors">Projects</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+
+            <a href="#contact" class="border border-neutral-700 px-5 py-2 rounded-full text-xs font-bold hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 uppercase tracking-widest">
+                Hire Studio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="./images/hero_background.png" 
+                 alt="Minecraft Shader Background" 
+                 class="w-full h-full object-cover opacity-40 grayscale hover:grayscale-0 transition-all duration-[2s] transform scale-105">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-black/80 via-transparent to-brand-black"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-4xl px-6 mt-10">
+            <h2 class="text-brand-orange tracking-[0.2em] text-sm md:text-base font-bold mb-4 uppercase animate-pulse">Voxel Architect & Creative Studio</h2>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
+                We Build Your <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-500">Digital Legacy</span>
+            </h1>
+            <p class="text-neutral-400 max-w-xl mx-auto mb-10 text-lg leading-relaxed">
+                Menghadirkan arsitektur Minecraft kelas atas dengan detail presisi. Dari server hub megah hingga organic sculpture yang rumit.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#portfolio" class="bg-brand-orange text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-all duration-300 flex items-center justify-center gap-2 group">
+                    View Gallery <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="border-y border-neutral-800 bg-brand-black/50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-3xl md:text-4xl font-bold text-white mb-2">150+</div>
+                <div class="text-xs text-brand-orange uppercase tracking-wider">Projects Done</div>
+            </div>
+            <div>
+                <div class="text-3xl md:text-4xl font-bold text-white mb-2">5+</div>
+                <div class="text-xs text-brand-orange uppercase tracking-wider">Years Exp</div>
+            </div>
+            <div>
+                <div class="text-3xl md:text-4xl font-bold text-white mb-2">20+</div>
+                <div class="text-xs text-brand-orange uppercase tracking-wider">Server Hubs</div>
+            </div>
+            <div>
+                <div class="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
+                <div class="text-xs text-brand-orange uppercase tracking-wider">Satisfaction</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <section id="portfolio" class="py-24 bg-brand-black relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h3 class="text-brand-orange font-bold uppercase tracking-widest mb-2">Selected Works</h3>
+                    <h2 class="text-4xl md:text-5xl font-bold text-white">Masterpiece Collection</h2>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-neutral-500 text-sm">Klik gambar untuk melihat detail galeri.</p>
+                </div>
+            </div>
+
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
+                <!-- Projects will be injected here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Simple -->
+    <section id="services" class="py-24 border-t border-neutral-900 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Our Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 border border-neutral-800 hover:border-brand-orange transition-colors duration-300 group bg-brand-black">
+                    <i class="fa-solid fa-dungeon text-4xl text-neutral-600 group-hover:text-brand-orange mb-6 transition-colors"></i>
+                    <h3 class="text-xl font-bold mb-3">Mega Structures</h3>
+                    <p class="text-neutral-400 text-sm">Kastil, kota futuristik, dan struktur raksasa dengan detail interior.</p>
+                </div>
+                <div class="p-8 border border-neutral-800 hover:border-brand-orange transition-colors duration-300 group bg-brand-black">
+                    <i class="fa-solid fa-tree text-4xl text-neutral-600 group-hover:text-brand-orange mb-6 transition-colors"></i>
+                    <h3 class="text-xl font-bold mb-3">Organics & Terrain</h3>
+                    <p class="text-neutral-400 text-sm">Custom terrain, patung naga, pohon raksasa, dan elemen organik.</p>
+                </div>
+                <div class="p-8 border border-neutral-800 hover:border-brand-orange transition-colors duration-300 group bg-brand-black">
+                    <i class="fa-solid fa-gamepad text-4xl text-neutral-600 group-hover:text-brand-orange mb-6 transition-colors"></i>
+                    <h3 class="text-xl font-bold mb-3">Server Spawns</h3>
+                    <p class="text-neutral-400 text-sm">Lobby dan hub fungsional yang dioptimalkan untuk navigasi player.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-12 bg-black border-t border-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h4 class="text-2xl font-bold text-white mb-2">EASY<span class="text-brand-orange">CRAFT</span></h4>
+                <p class="text-neutral-500 text-sm">Building dreams, block by block.</p>
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:bg-brand-orange hover:text-white transition-all"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:bg-brand-orange hover:text-white transition-all"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:bg-brand-orange hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <div class="text-neutral-600 text-xs">
+                &copy; 2026 EasyCraft Studio. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FULLSCREEN MODAL / LIGHTBOX -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 hidden flex flex-col opacity-0 transition-opacity duration-300">
+        
+        <!-- Header Modal -->
+        <div class="absolute top-0 left-0 w-full p-6 flex justify-between items-start z-50">
+            <div>
+                <h3 id="modal-title" class="text-2xl font-bold text-white tracking-wide">Project Name</h3>
+                <p id="modal-desc" class="text-brand-orange text-sm uppercase font-medium mt-1">Category</p>
+                <div class="text-neutral-400 text-xs mt-1" id="modal-counter">1 / 5</div>
+            </div>
+            <button onclick="closeLightbox()" class="text-white hover:text-brand-orange transition-colors text-4xl leading-none">&times;</button>
+        </div>
+
+        <!-- Main Image Area -->
+        <div class="flex-1 flex items-center justify-center relative px-2 md:px-20 h-full w-full">
+            
+            <!-- Prev Button -->
+            <button onclick="prevImage()" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-brand-orange p-4 transition-all hover:scale-110 z-50">
+                <i class="fa-solid fa-chevron-left text-3xl md:text-5xl"></i>
+            </button>
+
+            <!-- Image Container -->
+            <div class="relative max-w-7xl w-full h-[70vh] md:h-[80vh] flex items-center justify-center">
+                <img id="modal-img" src="" alt="Project Detail" class="max-w-full max-h-full object-contain shadow-2xl shadow-brand-orange/20 rounded-sm">
+                
+                <!-- Loading Spinner (Hidden by default, shown when loading) -->
+                <div id="loading-spinner" class="absolute inset-0 flex items-center justify-center z-[-1]">
+                    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-brand-orange"></div>
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <button onclick="nextImage()" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-brand-orange p-4 transition-all hover:scale-110 z-50">
+                <i class="fa-solid fa-chevron-right text-3xl md:text-5xl"></i>
+            </button>
+        </div>
+
+        <!-- Thumbnail Strip (Optional, simplified) -->
+        <div class="h-20 w-full flex justify-center gap-2 pb-6 px-6 overflow-x-auto no-scrollbar" id="thumbnail-strip">
+            <!-- Thumbnails injected by JS -->
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- DATA PROJECTS ---
+        // Menggunakan gambar placeholder Unsplash yang relevan dengan arsitektur/minecraft
+        const projects = [
+            {
+                id: 1,
+                title: "The Celestial Hub",
+                category: "Server Spawn",
+                images: [
+                    "https://images.unsplash.com/photo-1595878715977-2e8f8df18ea8?q=80&w=1600&auto=format&fit=crop", // Main
+                    "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 2,
+                title: "Dragon's Peak Castle",
+                category: "Medieval Structure",
+                images: [
+                    "https://images.unsplash.com/photo-1533158326339-b10c3c6f4771?q=80&w=1600&auto=format&fit=crop", // Main
+                    "https://images.unsplash.com/photo-1599695679905-3e9a72138a0f?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1626079678835-02758eb09355?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 3,
+                title: "Neon Cyber City",
+                category: "Futuristic / Sci-Fi",
+                images: [
+                    "https://images.unsplash.com/photo-1555679427-1f6dfcce943b?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1504221502049-7c1cc789b703?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 4,
+                title: "Elven Sanctuary",
+                category: "Organic & Fantasy",
+                images: [
+                    "https://images.unsplash.com/photo-1448375240586-dfd8d395ea6c?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1518182170546-0766ce6fec56?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 5,
+                title: "Obsidian Fortress",
+                category: "PvP Arena",
+                images: [
+                    "https://images.unsplash.com/photo-1516937941348-c09645f31e3d?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1533035336122-4327d347d2fe?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1470723710355-171b443ad858?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 6,
+                title: "Industrial District",
+                category: "Modern City",
+                images: [
+                    "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 7,
+                title: "Industrial District",
+                category: "Modern City",
+                images: [
+                    "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 8,
+                title: "Industrial District",
+                category: "Modern City",
+                images: [
+                    "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 9,
+                title: "Industrial District",
+                category: "Modern City",
+                images: [
+                    "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 10,
+                title: "Industrial District",
+                category: "Modern City",
+                images: [
+                    "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 11,
+                title: "Industrial District",
+                category: "Modern City",
+                images: [
+                    "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 12,
+                title: "Industrial District",
+                category: "Modern City",
+                images: [
+                    "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 13,
+                title: "Industrial District",
+                category: "Modern City",
+                images: [
+                    "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop"
+                ]
+            },
+            {
+                id: 14,
+                title: "Industrial District",
+                category: "Modern City",
+                images: [
+                    "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?q=80&w=1600&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=1600&auto=format&fit=crop"
+                ]
+            }
+        ];
+
+        // --- RENDER GRID ---
+        const projectGrid = document.getElementById('project-grid');
+        
+        projects.forEach(project => {
+            const card = document.createElement('div');
+            card.className = "group relative cursor-pointer overflow-hidden rounded-sm";
+            card.onclick = () => openLightbox(project.id);
+            
+            card.innerHTML = `
+                <div class="aspect-[4/3] w-full overflow-hidden bg-neutral-800">
+                    <img src="${project.images[0]}" alt="${project.title}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <p class="text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">${project.category}</p>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-brand-orange transition-colors">${project.title}</h3>
+                        <div class="h-[1px] w-0 group-hover:w-full bg-brand-orange mt-4 transition-all duration-500"></div>
+                        <p class="text-neutral-400 text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100">Click to view ${project.images.length} photos</p>
+                    </div>
+                </div>
+            `;
+            projectGrid.appendChild(card);
+        });
+
+        // --- LIGHTBOX LOGIC ---
+        let currentProject = null;
+        let currentImageIndex = 0;
+
+        const lightbox = document.getElementById('lightbox');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalCounter = document.getElementById('modal-counter');
+        const thumbnailStrip = document.getElementById('thumbnail-strip');
+
+        function openLightbox(projectId) {
+            currentProject = projects.find(p => p.id === projectId);
+            currentImageIndex = 0;
+            
+            updateLightboxContent();
+            
+            lightbox.classList.remove('hidden');
+            // Small delay to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden'; // Prevent scrolling background
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                currentProject = null;
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateLightboxContent() {
+            if (!currentProject) return;
+
+            // Fade out old image briefly implies loading (optional visual tweak, keeping simple here)
+            modalImg.src = currentProject.images[currentImageIndex];
+            modalTitle.innerText = currentProject.title;
+            modalDesc.innerText = currentProject.category;
+            modalCounter.innerText = `${currentImageIndex + 1} / ${currentProject.images.length}`;
+
+            // Update Thumbnails
+            thumbnailStrip.innerHTML = '';
+            currentProject.images.forEach((img, index) => {
+                const thumb = document.createElement('div');
+                thumb.className = `h-full aspect-square overflow-hidden cursor-pointer border-2 transition-all ${index === currentImageIndex ? 'border-brand-orange opacity-100' : 'border-transparent opacity-50 hover:opacity-100'}`;
+                thumb.innerHTML = `<img src="${img}" class="w-full h-full object-cover">`;
+                thumb.onclick = (e) => {
+                    e.stopPropagation(); // prevent modal close if we added click listener to overlay
+                    currentImageIndex = index;
+                    updateLightboxContent();
+                };
+                thumbnailStrip.appendChild(thumb);
+            });
+        }
+
+        function nextImage() {
+            if (!currentProject) return;
+            currentImageIndex = (currentImageIndex + 1) % currentProject.images.length;
+            updateLightboxContent();
+        }
+
+        function prevImage() {
+            if (!currentProject) return;
+            currentImageIndex = (currentImageIndex - 1 + currentProject.images.length) % currentProject.images.length;
+            updateLightboxContent();
+        }
+
+        // --- EVENT LISTENERS ---
+        
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Close on clicking outside image (optional)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.classList.contains('flex-1')) {
+                closeLightbox();
+            }
+        });
+
+    </script>
+</body>
+</html>
