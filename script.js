@@ -4,8 +4,8 @@
 const projects = [
     {
         id: 2,
-        title: "The Celestial Hub",
-        category: "Server Spawn",
+        title: "Cyber City",
+        category: "Creative Hub",
         images: [
             "./images/projects/project2/cover_project2",
             "./images/projects/project2/project2_a",
@@ -16,8 +16,8 @@ const projects = [
     },
     {
         id: 1,
-        title: "Cyberpunk",
-        category: "Creative Studio",
+        title: "Sirahebi",
+        category: "Spawn Lobby",
         images: [
             "./images/projects/project1/cover_project1",
             "./images/projects/project1/project1_a",
