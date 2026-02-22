@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyCraft | Voxel Architect & Creative Studio</title>
     <link rel="icon" type="image/png" href="./images/icon.png?v=2">
-    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#c2410c">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,6 +204,17 @@
     </div>
 
     <script src="script.js"></script>
+<script>
+    // Mendaftarkan Service Worker
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js')
+                .then(reg => console.log('Service Worker terdaftar!', reg))
+                .catch(err => console.error('Service Worker gagal!', err));
+        });
+    }
+</script>
 </body>
 </html>
+
 
