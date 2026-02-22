@@ -7,11 +7,11 @@ const projects = [
         title: "Cyber City",
         category: "Creative Hub",
         images: [
-            "./images/projects/project2/cover_project2",
-            "./images/projects/project2/project2_a",
-            "./images/projects/project2/project2_b",
-            "./images/projects/project2/project2_c",
-            "./images/projects/project2/project2_d"
+            "./images/project/project2/cover_project2",
+            "./images/project/project2/project2_a",
+            "./images/project/project2/project2_b",
+            "./images/project/project2/project2_c",
+            "./images/project/project2/project2_d"
         ]
     },
     {
@@ -19,11 +19,11 @@ const projects = [
         title: "Sirahebi",
         category: "Spawn Lobby",
         images: [
-            "./images/projects/project1/cover_project1",
-            "./images/projects/project1/project1_a",
-            "./images/projects/project1/project1_b",
-            "./images/projects/project1/project1_c",
-            "./images/projects/project1/project1_d"
+            "./images/project/project1/cover_project1",
+            "./images/project/project1/project1_a",
+            "./images/project/project1/project1_b",
+            "./images/project/project1/project1_c",
+            "./images/project/project1/project1_d"
         ]
     },
     // (Kamu bisa melanjutkan menambahkan daftar project 1 hingga 12 di sini seperti di kode aslimu)
