@@ -155,33 +155,52 @@ lightbox.addEventListener('click', (e) => {
     }
 });
         
-// --- FITUR SWIPE (USAP) UNTUK MOBILE ---
+// --- FITUR SWIPE BERGERAK (DRAG) UNTUK MOBILE ---
 let touchstartX = 0;
-let touchendX = 0;
+let touchmoveX = 0;
+let isSwiping = false;
 
-// Mendeteksi posisi x (horizontal) saat jari pertama kali menyentuh layar
+// 1. Saat jari pertama kali menyentuh layar
 lightbox.addEventListener('touchstart', function(event) {
-    touchstartX = event.changedTouches[0].screenX;
-}, false);
+    touchstartX = event.touches[0].clientX;
+    touchmoveX = touchstartX; // Reset posisi pergerakan
+    isSwiping = true;
+    
+    // Matikan efek transisi (animasi mulus) sementara, 
+    // agar gambar langsung menempel di jari tanpa delay.
+    modalImg.style.transition = 'none';
+}, { passive: true });
 
-// Mendeteksi posisi x saat jari dilepas dari layar, lalu mengeksekusi fungsi geser
+// 2. Saat jari mulai bergerak / menggeser (Real-time)
+lightbox.addEventListener('touchmove', function(event) {
+    if (!isSwiping) return; // Jika tidak sedang disentuh, hentikan
+    
+    touchmoveX = event.touches[0].clientX;
+    let jarakGeser = touchmoveX - touchstartX; // Hitung seberapa jauh jari bergeser
+    
+    // Geser gambar ke kiri/kanan sesuai posisi jari
+    modalImg.style.transform = `translateX(${jarakGeser}px)`;
+}, { passive: true });
+
+// 3. Saat jari dilepaskan dari layar
 lightbox.addEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
-    handleSwipeGesture();
+    isSwiping = false;
+    let jarakGeser = touchmoveX - touchstartX;
+    
+    // Jarak minimal usapan (70 piksel) agar gambar mau berganti
+    const swipeThreshold = 70; 
+    
+    // Nyalakan kembali efek transisi, agar saat gambar balik ke tengah terlihat mulus / membal
+    modalImg.style.transition = 'transform 0.3s ease-out';
+    
+    // Cek apakah geseran memenuhi syarat untuk ganti gambar
+    if (jarakGeser < -swipeThreshold) {
+        nextImage(); // Geser ke kiri -> Gambar selanjutnya
+    } else if (jarakGeser > swipeThreshold) {
+        prevImage(); // Geser ke kanan -> Gambar sebelumnya
+    }
+    
+    // Terlepas dari apakah gambarnya berganti atau tidak, 
+    // selalu kembalikan posisi gambar ke tengah (titik 0).
+    modalImg.style.transform = 'translateX(0)';
 }, false);
-
-// Fungsi logika penentu arah usapan
-function handleSwipeGesture() {
-    // Jarak minimal usapan (50 pixel) agar ketidaksengajaan tersentuh tidak mengganti gambar
-    const swipeThreshold = 50; 
-    
-    // Jika posisi akhir lebih kecil dari posisi awal dikurangi jarak minimal (Artinya geser ke KIRI)
-    if (touchendX < touchstartX - swipeThreshold) {
-        nextImage(); // Panggil fungsi gambar selanjutnya
-    }
-    
-    // Jika posisi akhir lebih besar dari posisi awal ditambah jarak minimal (Artinya geser ke KANAN)
-    if (touchendX > touchstartX + swipeThreshold) {
-        prevImage(); // Panggil fungsi gambar sebelumnya
-    }
-});
