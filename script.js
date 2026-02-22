@@ -152,6 +152,9 @@ document.addEventListener('keydown', (e) => {
 lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox || e.target.classList.contains('flex-1')) {
         closeLightbox();
+    }
+});
+        
 // --- FITUR SWIPE (USAP) UNTUK MOBILE ---
 let touchstartX = 0;
 let touchendX = 0;
