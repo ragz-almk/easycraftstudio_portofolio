@@ -184,6 +184,4 @@ function handleSwipeGesture() {
     if (touchendX > touchstartX + swipeThreshold) {
         prevImage(); // Panggil fungsi gambar sebelumnya
     }
-}
-    }
 });
