@@ -1,0 +1,27 @@
+/* Pengaturan dasar untuk warna background dan teks seluruh halaman */
+body {
+    background-color: #050505;
+    color: #f5f5f5;
+}
+
+/* Menyembunyikan scrollbar bawaan browser untuk galeri overlay, 
+   agar tampilan lebih bersih tapi tetap bisa di-scroll */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none; /* Untuk browser Internet Explorer/Edge lawas */
+    scrollbar-width: none;    /* Untuk browser Firefox */
+}
+
+/* Efek kaca (Glassmorphism) untuk bagian navigasi (navbar) atas */
+.glass-nav {
+    background: rgba(10, 10, 10, 0.8); /* Warna hitam transparan */
+    backdrop-filter: blur(12px);       /* Efek blur pada latar belakang yang tertutup navbar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Garis tipis di bawah navbar */
+}
+
+/* Efek gradasi gelap ke transparan untuk overlay gambar galeri */
+.image-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 50%);
+}
