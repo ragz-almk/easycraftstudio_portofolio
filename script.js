@@ -7,11 +7,13 @@ const projects = [
         title: "Cyber City",
         category: "Creative Hub",
         images: [
-            "./images/project/project2/cover_project2.webp",
+            "./images/project/project2/cover.webp",
             "./images/project/project2/project2_a.webp",
             "./images/project/project2/project2_b.webp",
             "./images/project/project2/project2_c.webp",
-            "./images/project/project2/project2_d.webp"
+            "./images/project/project2/project2_d.webp",
+            "./images/project/project2/project2_e.webp",
+            "./images/project/project2/project2_f.webp"
         ]
     },
     {
