@@ -3,24 +3,27 @@
 // Berisi daftar nama proyek, kategori, dan link gambar-gambarnya.
 const projects = [
     {
-        id: 14,
+        id: 2,
         title: "The Celestial Hub",
         category: "Server Spawn",
         images: [
-            "https://images.unsplash.com/photo-1595878715977-2e8f8df18ea8?q=80&w=1600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop"
+            "./images/projects/project2/cover_project2",
+            "./images/projects/project2/project2_a",
+            "./images/projects/project2/project2_b",
+            "./images/projects/project2/project2_c",
+            "./images/projects/project2/project2_d"
         ]
     },
     {
-        id: 13,
-        title: "Dragon's Peak Castle",
-        category: "Medieval Structure",
+        id: 1,
+        title: "Cyberpunk",
+        category: "Creative Studio",
         images: [
-            "https://images.unsplash.com/photo-1533158326339-b10c3c6f4771?q=80&w=1600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1599695679905-3e9a72138a0f?q=80&w=1600&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1626079678835-02758eb09355?q=80&w=1600&auto=format&fit=crop"
+            "./images/projects/project1/cover_project1",
+            "./images/projects/project1/project1_a",
+            "./images/projects/project1/project1_b",
+            "./images/projects/project1/project1_c",
+            "./images/projects/project1/project1_d"
         ]
     },
     // (Kamu bisa melanjutkan menambahkan daftar project 1 hingga 12 di sini seperti di kode aslimu)
