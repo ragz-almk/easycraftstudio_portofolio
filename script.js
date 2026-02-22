@@ -152,5 +152,35 @@ document.addEventListener('keydown', (e) => {
 lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox || e.target.classList.contains('flex-1')) {
         closeLightbox();
+// --- FITUR SWIPE (USAP) UNTUK MOBILE ---
+let touchstartX = 0;
+let touchendX = 0;
+
+// Mendeteksi posisi x (horizontal) saat jari pertama kali menyentuh layar
+lightbox.addEventListener('touchstart', function(event) {
+    touchstartX = event.changedTouches[0].screenX;
+}, false);
+
+// Mendeteksi posisi x saat jari dilepas dari layar, lalu mengeksekusi fungsi geser
+lightbox.addEventListener('touchend', function(event) {
+    touchendX = event.changedTouches[0].screenX;
+    handleSwipeGesture();
+}, false);
+
+// Fungsi logika penentu arah usapan
+function handleSwipeGesture() {
+    // Jarak minimal usapan (50 pixel) agar ketidaksengajaan tersentuh tidak mengganti gambar
+    const swipeThreshold = 50; 
+    
+    // Jika posisi akhir lebih kecil dari posisi awal dikurangi jarak minimal (Artinya geser ke KIRI)
+    if (touchendX < touchstartX - swipeThreshold) {
+        nextImage(); // Panggil fungsi gambar selanjutnya
+    }
+    
+    // Jika posisi akhir lebih besar dari posisi awal ditambah jarak minimal (Artinya geser ke KANAN)
+    if (touchendX > touchstartX + swipeThreshold) {
+        prevImage(); // Panggil fungsi gambar sebelumnya
+    }
+}
     }
 });
